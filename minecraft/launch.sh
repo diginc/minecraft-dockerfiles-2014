@@ -1,6 +1,11 @@
 #!/bin/sh
-XMX='1600M'
-XMS='768M'
-JAR='minecraft.jar'
+if [ -n $1 ] ; then
+  XMX='3G'
+  XMS='2G'
+  JAVA_ARGS="-Xmx${XMX} -Xms${XMS}"
+else
+  JAVA_ARGS=$1
+fi;
 
-java -Xmx1600M -Xms768M -jar minecraft.jar nogui
+JAR='minecraft.jar'
+java $1 -jar $JAR nogui

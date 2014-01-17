@@ -17,11 +17,11 @@ RUN apt-get install -y unzip
 RUN mkdir /minecraft
 RUN wget -O /tmp/hexxit.zip http://mirror.technicpack.net/Technic/servers/hexxit/Hexxit_Server_v1.0.10.zip
 RUN unzip /tmp/hexxit.zip -d /minecraft/
-RUN chmod +x /minecraft/Hexxit.jar
+ADD ./launch.sh /minecraft/launch.sh
+RUN chmod +x /minecraft/launch.sh
 
 VOLUME /minecraft
-ADD ./launch.sh /minecraft/launch.sh
 EXPOSE 25565
 
 WORKDIR /minecraft
-CMD sh launch.sh
+ENTRYPOINT ["/minecraft/launch.sh"]

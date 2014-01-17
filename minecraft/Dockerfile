@@ -15,11 +15,11 @@ RUN apt-get install -y wget
 
 RUN mkdir /minecraft
 RUN wget -O /minecraft/minecraft.jar https://s3.amazonaws.com/Minecraft.Download/versions/1.6.2/minecraft_server.1.6.2.jar
-RUN chmod +x /minecraft/minecraft.jar
+ADD launch.sh /minecraft/launch.sh
+RUN chmod +x /minecraft/launch.sh
 
 VOLUME /minecraft
 EXPOSE 25565
 
 WORKDIR /minecraft
-ADD launch.sh /minecraft/launch.js
-CMD sh launch.sh
+ENTRYPOINT ["/minecraft/launch.sh"]

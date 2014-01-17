@@ -17,11 +17,12 @@ RUN apt-get install -y unzip
 RUN mkdir /minecraft
 RUN wget -O /tmp/tekkit.zip http://mirror.technicpack.net/Technic/servers/tekkitmain/Tekkit_Server_v1.1.10.zip
 RUN unzip /tmp/tekkit.zip -d /minecraft/
-RUN chmod +x /minecraft/Tekkit.jar
+
+ADD ./launch.sh /minecraft/launch.sh
+RUN chmod +x /minecraft/launch.sh
 
 VOLUME /minecraft
 EXPOSE 25565
 
-ADD ./launch.sh /minecraft/launch.sh
 WORKDIR /minecraft
-CMD sh launch.sh
+ENTRYPOINT ["/minecraft/launch.sh"]
