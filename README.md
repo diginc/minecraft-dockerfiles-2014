@@ -1,6 +1,6 @@
 # About Minecraft Dockerfiles
 A finished docker product to run Minecraft, Tekkit, Hexxit, and Overviewer (online map).  Dockerfiles based off of Michael Crosby's
-* Advanced Docker Volume tutorial: http://crosbymichael.com/advanced-docker-volumes.html
+* Advanced Docker Volume tutorial: [http://crosbymichael.com/advanced-docker-volumes.html](https://web.archive.org/web/20190312080932/http://crosbymichael.com/advanced-docker-volumes.html) (archived link, original gone)
 * Dockerfiles: https://github.com/crosbymichael/Dockerfiles
 
 ## Requirements
